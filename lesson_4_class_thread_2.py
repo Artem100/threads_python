@@ -3,7 +3,7 @@ import time
 
 
 class MyThread(threading.Thread):
-# Cоздаем класс с методом c контркутором
+# Cоздаем класс с методом c конcтркутором
     def __init__(self, number, func, args):
         threading.Thread.__init__(self)
         self.number = number # Номер потока, чтоб было видно в print

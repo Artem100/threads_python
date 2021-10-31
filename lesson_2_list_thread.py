@@ -7,9 +7,9 @@ import time
 """
 
 def sleeper(n, name):
-    print(f'Hi I am {name}, I am going to sleep')
+    print(f'Hi I am {name}, I am going to Start')
     time.sleep(n)
-    print(f'{name} has waked up')
+    print(f'{name} has stop')
 
 
 t = threading.Thread(target=sleeper, name='Thread optional', args=(5, 'Vasya')) # name - имя потока, # Создаем поток и в target засовываем нужную фунцкцию, args = аргументы для фунции в target

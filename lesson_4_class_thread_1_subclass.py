@@ -5,7 +5,6 @@ import time
 class MyThread(threading.Thread):
 # Cоздаем класс с методом который будет запускать потоки
 
-
     def run(self):
         # Метод старта потока
         print(f"\nStart thread {self.getName()}")
@@ -16,6 +15,8 @@ class MyThread(threading.Thread):
         finally:
             del self._target, self._args, self._kwargs
         print(f"Finished thread {self.getName()}")
+
+
 
 def sleeper(n, name):
     print(f'Hi I am {name}, I am going to sleep')
