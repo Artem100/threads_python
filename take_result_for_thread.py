@@ -13,25 +13,29 @@ class WhatTake(Thread):
         self.catch = defaultdict(int)
 
     def run(self):
-        self.catch = defaultdict(int)
-        for i in range(1, 3):
-            value = random.choice(self.some_list)
-            print(f"{self.name}: {value}")
-            self.catch[value] += 1
+        try:
+            self.catch = defaultdict(int)
+            for i in range(1, 8):
+                value = random.choice(self.some_list)
+                if value == '7':
+                    print("It was 7")
+                    raise ValueError
+                print(f"{self.name}: {value}")
+                self.catch[value] += 1
+        except:
+            print("was error")
 
 vasya = WhatTake(name='Гена', some_list=what_list)
-kolya = WhatTake(name='Чешир', some_list=what_list)
-
 
 vasya.start()
+kolya = WhatTake(name='Чешир', some_list=what_list)
 kolya.start()
-
 vasya.join()
 kolya.join()
 
 print("Закончили")
 
-for asdasd in (vasya, kolya):
-    print(f'Итого буквы {asdasd.name}:')
-    for fish, count in asdasd.catch.items():
+for result in (vasya, kolya):
+    print(f'Итого буквы {result.name}:')
+    for fish, count in result.catch.items():
         print(f'    {fish} - {count}')
