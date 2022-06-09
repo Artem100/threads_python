@@ -35,7 +35,8 @@ def limits_items():
 
 create1 = threading.Thread(target=create_item)
 create2 = threading.Thread(target=create_items_2)
-limiter = threading.Thread(target=limits_items, daemon=True) # Daemaon - значит что поток остановиться, когда все потоки остальные перестанут работать
+limiter = threading.Thread(target=limits_items, daemon=True)
+# Daemaon - значит что поток остановиться, когда все потоки остальные перестанут работать
 
 create1.start()
 create2.start()

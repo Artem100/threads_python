@@ -12,7 +12,9 @@ def sleeper(n, name):
     print(f'{name} has stop')
 
 
-t = threading.Thread(target=sleeper, name='Thread optional', args=(5, 'Vasya')) # name - имя потока, # Создаем поток и в target засовываем нужную фунцкцию, args = аргументы для фунции в target
+t = threading.Thread(target=sleeper, name='Thread optional', args=(5, 'Vasya'))
+# name - имя потока,
+# Создаем поток и в target засовываем нужную фунцкцию, args = аргументы для фунции в target
 
 thread_list = []
 

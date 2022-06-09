@@ -4,7 +4,7 @@ import multiprocessing
 
 # Функция обработчик
 def hadle(some_value):
-    pass
+    print(some_value)
 
 some_List = ['sd', 'asdaa']
 
